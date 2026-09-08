@@ -1,5 +1,10 @@
 #include <iostream>
 int main() {
-	std::cout << "hi";
+	int a, b, c;
+	std::cout << "enter a, b:";
+	std::cin >> a;
+	std::cin >> b;
+	c = a + b;
+	std::cout << "a + b = " << c;
 	return 0;
 }
