@@ -254,6 +254,8 @@ int main() {
     delete[] bestWay;
     delete[] worstWay;
     delete[] hPath;
+return 0;
+}
 
     return 0;
 }
