@@ -76,4 +76,8 @@ Vector Vector::DoubleCross(const Vector& b, const Vector& c) const
 	return b * Dot(c) - c * Dot(b);
 }
 
+Vector operator* (double scalar, const Vector v)
+{
+	return v * scalar;
+}
 
