@@ -19,6 +19,28 @@ int main()
     cout << "\nb = ";   b.Output();
     cout << "\nc = ";   c.Output(); 
 
+    Vector f;
+    cout << "enter vector f (x y z): ";
+    f.Input();
+
+    cout << "\n2*f*2 = ";
+    f = 2.0 * f * 2.0;
+
+    f.Output();
+
+    Vector r(1, 1, 1);
+    cout << "\nstart t: " << "\n";
+    r.Output();
+    r.setX(10);
+    r.setY(20);
+    r.setZ(30);
+    cout << "\nafter: " << "\n";
+    r.Output();
+
+    cout << "r.getX() = " << r.getX() << "\n";
+    cout << "r.getY() = " << r.getY() << "\n";
+    cout << "r.getZ() = " << r.getZ() << "\n";
+
     cout << "\n|a| = " << a.Lenght() << "\n";
 
     cout << "norm a = ";
