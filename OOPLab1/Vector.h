@@ -30,4 +30,6 @@ public:
 private:
 	double x_ = 0.0, y_ = 0.0, z_ = 0.0;
 
+Vector operator* (double scalar, const Vector v);
+
 };
