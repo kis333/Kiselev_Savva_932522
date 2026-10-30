@@ -114,7 +114,27 @@ int main() {
             int hi = ranges[ri][1];
 
             int* original = new int[n];
-            generateArray(original, n, lo, hi, 42 + si * 10 + ri);
+
+            int flag;
+            cout << "1 = new array, 0 = load saved: ";
+            cin >> flag;
+
+            if (flag == 0) {
+                string fname = outDir + "/array_n" + to_string(n) + "_" + to_string(lo) + "_" + to_string(hi) + ".bin";
+                ifstream fin(fname, ios::binary);
+                if (fin) {
+                    fin.read((char*)original, n * sizeof(int));
+                }
+                else {
+                    generateArray(original, n, lo, hi, 42 + si * 10 + ri);
+                }
+            }
+            else {
+                generateArray(original, n, lo, hi, 42 + si * 10 + ri);
+                string fname = outDir + "/array_n" + to_string(n) + "_" + to_string(lo) + "_" + to_string(hi) + ".bin";
+                ofstream fout(fname, ios::binary);
+                fout.write((char*)original, n * sizeof(int));
+            }
 
             cout << "  range [" << lo << ".." << hi << "]\n";
 
