@@ -1,24 +1,28 @@
 #pragma once
 #include <iostream>
-#include <cassert>
 
 class DynamicArray {
 public:
     class iterator;
     class const_iterator;
+
     DynamicArray() = default;
     DynamicArray(const int* data, int length);
     DynamicArray(const DynamicArray& other);
     DynamicArray(DynamicArray&& other) noexcept;
     ~DynamicArray();
+
     DynamicArray& operator=(const DynamicArray& other);
     DynamicArray& operator=(DynamicArray&& other) noexcept;
+
     DynamicArray& operator+=(const int& value);
     DynamicArray& operator+=(const DynamicArray& other);
     DynamicArray operator+(const int& value) const;
     DynamicArray operator+(const DynamicArray& other) const;
+
     bool operator==(const DynamicArray& other) const;
     bool operator!=(const DynamicArray& other) const;
+
     int getLength() const;
     int getCapacity() const;
     int& operator[](int index);
@@ -32,6 +36,7 @@ public:
     int removeAll(const int& value);
     int getMin() const;
     int getMax() const;
+
     iterator insert(iterator pos, const int& value);
     iterator erase(iterator pos);
     iterator erase(iterator first, iterator last);
@@ -41,10 +46,12 @@ public:
     const_iterator end() const;
     const_iterator cbegin() const;
     const_iterator cend() const;
+
 private:
     int* data_ = nullptr;
     int length_ = 0;
     int capacity_ = 0;
+
     void reserve(int capacity);
     void shrink();
 };
@@ -58,6 +65,7 @@ public:
     iterator& operator++();
     iterator operator++(int);
     int& operator*() const;
+
 private:
     int* data_ = nullptr;
     int index_ = 0;
@@ -75,6 +83,7 @@ public:
     const_iterator& operator++();
     const_iterator operator++(int);
     const int& operator*() const;
+
 private:
     const int* data_ = nullptr;
     int index_ = 0;
@@ -82,4 +91,3 @@ private:
 
 std::ostream& operator<<(std::ostream& out, const DynamicArray& array);
 std::istream& operator>>(std::istream& in, DynamicArray& array);
-#include "DynamicArrayInt.inl"
