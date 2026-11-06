@@ -12,17 +12,18 @@ using namespace std;
 using namespace std::chrono;
 
 static const char* KNOWN_FILES[] = {
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n10000_range_-10_10.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n10000_range_-1000_1000.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n10000_range_-100000_100000.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n100000_range_-10_10.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n100000_range_-1000_1000.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n100000_range_-100000_100000.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n1000000_range_-10_10.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n1000000_range_-1000_1000.txt",
-    "C:/Users/kis/source/repos/Shellsort/Shellsort/results/original_n1000000_range_-100000_100000.txt"
+    "original_n10000_range_-10_10.txt",
+    "original_n10000_range_-1000_1000.txt",
+    "original_n10000_range_-100000_100000.txt",
+    "original_n100000_range_-10_10.txt",
+    "original_n100000_range_-1000_1000.txt",
+    "original_n100000_range_-100000_100000.txt",
+    "original_n1000000_range_-10_10.txt",
+    "original_n1000000_range_-1000_1000.txt",
+    "original_n1000000_range_-100000_100000.txt"
 };
 static const int KNOWN_FILES_COUNT = sizeof(KNOWN_FILES) / sizeof(KNOWN_FILES[0]);
+
 
 bool isSorted(int* a, int n) {
     for (int i = 1; i < n; i++)
